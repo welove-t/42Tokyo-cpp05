@@ -6,8 +6,8 @@ int main( void )
 
 	try
 	{
-		b.checkOverGrade(0);
-		b.checkOverGrade(150);
+		b.checkOverGrade(1);
+		std::cout << b << std::endl;
 	}
 	catch(Bureaucrat::GradeTooLowException& e)
 	{
@@ -17,7 +17,6 @@ int main( void )
 	{
 		std::cerr << RED << e.what() << RESET << std::endl;
 	}
-	std::cout << "name: " << b.getName() << "\tgrade: " << b.getGrade() << std::endl;
 	return	0;
 }
 

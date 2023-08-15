@@ -72,3 +72,9 @@ const char* Bureaucrat::GradeTooLowException::what() const throw()
 {
 	return "Grade too low";
 }
+
+std::ostream&	operator<<(std::ostream& os, const Bureaucrat& rhs)
+{
+	os << rhs.getName() << ", bureaucrat grade " << rhs.getGrade() << ".";
+	return os;
+}
