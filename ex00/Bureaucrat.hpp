@@ -13,11 +13,12 @@ class Bureaucrat
 {
 	private:
 	protected:
-		std::string type;
+		const std::string	_name;
+		int					_grade;
 	public:
 		Bureaucrat();
-		Bureaucrat(std::string type);
-		virtual ~Bureaucrat();
+		Bureaucrat(std::string name, int grade);
+		~Bureaucrat();
 
 		Bureaucrat(const Bureaucrat& rhs);
 		Bureaucrat& operator=(const Bureaucrat& rhs);

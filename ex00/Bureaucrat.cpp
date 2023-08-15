@@ -1,17 +1,17 @@
 #include "Bureaucrat.hpp"
 
 /* Orthodox Canonical Form */
-Bureaucrat::Bureaucrat()
+Bureaucrat::Bureaucrat():_name(""), _grade(1)
 {
 	std::cout << "(Bureaucrat) Default Constructor called" << std::endl;
 }
 
-// Bureaucrat::Bureaucrat(std::string type):type(type)
-// {
-// 	std::cout << "(Bureaucrat) Constructor called" << std::endl;
-// }
+Bureaucrat::Bureaucrat(std::string name, int grade) :_name(name), _grade(grade)
+{
+	std::cout << "(Bureaucrat) Constructor called" << std::endl;
+}
 
-Bureaucrat::Bureaucrat(const Bureaucrat& rhs) : type(rhs.type)
+Bureaucrat::Bureaucrat(const Bureaucrat& rhs) : _name(rhs._name), _grade(rhs._grade)
 {
 	std::cout << "(Bureaucrat) Copy Constructor called" << std::endl;
 }
@@ -25,7 +25,8 @@ Bureaucrat& Bureaucrat::operator=(const Bureaucrat& rhs)
 {
 	if (this == &rhs)
 		return *this;
-	// type = rhs.type;
+	const_cast<std::string&>(_name) = rhs._name;
+	_grade = rhs._grade;
 	std::cout << "(Bureaucrat) Copy assignment operator called" << std::endl;
 	return *this;
 }
