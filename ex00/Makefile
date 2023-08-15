@@ -2,7 +2,7 @@
 NAME		= main
 CXX 		= c++
 CXXFLAGS 	= -Wall -Werror -Wextra -std=c++98
-FILES		= main Animal Dog Cat WrongAnimal WrongCat
+FILES		= main Bureaucrat
 SRCS		= $(FILES:=.cpp)
 OBJS_DIR	= .objs
 OBJS		= $(addprefix $(OBJS_DIR)/, $(SRCS:.cpp=.o))
