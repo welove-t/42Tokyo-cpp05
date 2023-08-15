@@ -27,6 +27,7 @@ class Bureaucrat
 
 		void	increaseGrade(void);
 		void	decreaseGrade(void);
+		void	checkOverGrade(const int grade) const;
 
 		class GradeTooHighException
 		{

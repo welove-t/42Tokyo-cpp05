@@ -53,12 +53,22 @@ void	Bureaucrat::decreaseGrade(void)
 	_grade++;
 }
 
+void	Bureaucrat::checkOverGrade(const int grade) const
+{
+	if (grade > 150)
+		throw Bureaucrat::GradeTooLowException();
+	else if (grade < 1)
+		throw Bureaucrat::GradeTooHighException();
+	else
+		return;
+}
+
 const char* Bureaucrat::GradeTooHighException::what() const throw()
 {
 	return "Grade too high";
 }
 
-const char* Bureaucrat::GradeTooHighException::what() const throw()
+const char* Bureaucrat::GradeTooLowException::what() const throw()
 {
 	return "Grade too low";
 }
