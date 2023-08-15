@@ -31,5 +31,16 @@ Bureaucrat& Bureaucrat::operator=(const Bureaucrat& rhs)
 	return *this;
 }
 
+/* Getter */
+const std::string&	Bureaucrat::getName(void) const
+{
+	return _name;
+}
+
+int	Bureaucrat::getGrade(void) const
+{
+	return _grade;
+}
+
 /* Function */
 
