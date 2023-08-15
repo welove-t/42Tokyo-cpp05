@@ -28,6 +28,17 @@ class Bureaucrat
 		void	increaseGrade(void);
 		void	decreaseGrade(void);
 
+		class GradeTooHighException
+		{
+			public:
+				const char* what() const throw();
+		};
+		class GradeTooLowException
+		{
+			public:
+				const char* what() const throw();
+		};
+
 };
 
 #endif
