@@ -43,4 +43,12 @@ int	Bureaucrat::getGrade(void) const
 }
 
 /* Function */
+void	Bureaucrat::increaseGrade(void)
+{
+	_grade--;
+}
 
+void	Bureaucrat::decreaseGrade(void)
+{
+	_grade++;
+}
