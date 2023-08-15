@@ -2,20 +2,85 @@
 
 int main( void )
 {
-	Bureaucrat b("hoge", 150);
+	Bureaucrat bureaucrat1;
 
-	try
+	std::cout << BLUE <<
+	"------------------------------------------" << std::endl <<
+	"               Initial Test "	 			<< std::endl <<
+	"------------------------------------------" << std::endl <<
+	RESET << std::endl;
+	for (int i = 149; i < 153; i++)
 	{
-		b.checkOverGrade(1);
-		std::cout << b << std::endl;
+		try
+		{
+			std::cout << "i = " << i << std::endl;
+			bureaucrat1 = Bureaucrat("bureaucrat" + std::to_string(i), i);
+			std::cout << GREEN << bureaucrat1 << RESET << std::endl;
+		}
+		catch(Bureaucrat::GradeTooLowException& e)
+		{
+			std::cout << RED << e.what() << "  " << RESET << std::endl;
+			continue;
+		}
+		catch(Bureaucrat::GradeTooHighException& e)
+		{
+			std::cout << RED << e.what() << RESET << std::endl;
+			continue;
+		}
 	}
-	catch(Bureaucrat::GradeTooLowException& e)
+
+	std::cout << BLUE <<
+	"------------------------------------------" << std::endl <<
+	"             IncreaseGrade Test "	 			<< std::endl <<
+	"------------------------------------------" << std::endl <<
+	RESET << std::endl;
+
+	int i = 3;
+	Bureaucrat bureaucrat2("bureaucrat", i);
+	while (i > -1)
 	{
-		std::cerr << RED << e.what() << RESET << std::endl;
+		try
+		{
+			std::cout << "i = " << i << " -> " << i - 1 <<std::endl;
+			bureaucrat2.increaseGrade();
+			std::cout << GREEN << bureaucrat2 << RESET << std::endl;
+		}
+		catch(Bureaucrat::GradeTooLowException& e)
+		{
+			std::cout << RED << e.what() << "  " << RESET << std::endl;
+		}
+		catch(Bureaucrat::GradeTooHighException& e)
+		{
+			std::cout << RED << e.what() << RESET << std::endl;
+		}
+		i--;
 	}
-	catch(Bureaucrat::GradeTooHighException& e)
+
+	std::cout << BLUE <<
+	"------------------------------------------" << std::endl <<
+	"             DecreaseGrade Test "	 			<< std::endl <<
+	"------------------------------------------" << std::endl <<
+	RESET << std::endl;
+
+	i = 148;
+	Bureaucrat bureaucrat3("bureaucrat", i);
+	while (i < 152)
 	{
-		std::cerr << RED << e.what() << RESET << std::endl;
+		try
+		{
+			std::cout << "i = " << i << " -> " << i + 1 <<std::endl;
+			bureaucrat3.decreaseGrade();
+			std::cout << GREEN << bureaucrat3 << RESET << std::endl;
+		}
+		catch(Bureaucrat::GradeTooLowException& e)
+		{
+			std::cout << RED << e.what() << "  " << RESET << std::endl;
+		}
+		catch(Bureaucrat::GradeTooHighException& e)
+		{
+			std::cout << RED << e.what() << RESET << std::endl;
+		}
+		i++;
 	}
 	return	0;
 }
