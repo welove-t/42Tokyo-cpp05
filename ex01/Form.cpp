@@ -72,19 +72,19 @@ void	Form::checkOverGrade(const int grade) const
 
 void	Form::beSigned(const Bureaucrat& bureaucrat)
 {
-	if (bureaucrat.getGrade() < _gradeSign)
+	if (bureaucrat.getGrade() > _gradeSign)
 		throw Form::GradeTooLowException();
 	_isSigned = true;
 }
 
 const char* Form::GradeTooHighException::what() const throw()
 {
-	return " Grade too high ";
+	return "Grade too high";
 }
 
 const char* Form::GradeTooLowException::what() const throw()
 {
-	return " Grade too low ";
+	return "Grade too low";
 }
 
 std::ostream&	operator<<(std::ostream& os, const Form& rhs)
