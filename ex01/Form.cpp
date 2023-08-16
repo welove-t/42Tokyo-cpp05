@@ -72,7 +72,7 @@ void	Form::checkOverGrade(const int grade) const
 
 void	Form::beSigned(const Bureaucrat& bureaucrat)
 {
-	if (bureaucrat.getGrade() > _gradeSign)
+	if (bureaucrat.getGrade() < _gradeSign)
 		throw Form::GradeTooLowException();
 	_isSigned = true;
 }
@@ -89,9 +89,10 @@ const char* Form::GradeTooLowException::what() const throw()
 
 std::ostream&	operator<<(std::ostream& os, const Form& rhs)
 {
-	os << "name: "<<rhs.getName() <<
-		"\tisSigned: " << rhs.getIsSigned() <<
-		"\tgradeSign: " << rhs.getGradeSign() <<
-		"\tgradeExecute: " << rhs.getGradeExecute() << ".";
+	os << "< Form > \n" <<
+		"name:\t\t" <<rhs.getName() << "\n" <<
+		"isSigned:\t" << rhs.getIsSigned() << "\n" <<
+		"gradeSign:\t" << rhs.getGradeSign() << "\n" <<
+		"gradeExecute:\t" << rhs.getGradeExecute();
 	return os;
 }
