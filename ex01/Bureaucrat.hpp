@@ -10,6 +10,7 @@
 #define BLUE	"\e[0;34m" // Blue
 #define RESET 	"\e[0m"    // Reset
 
+class Form;
 class Bureaucrat
 {
 	private:

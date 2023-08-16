@@ -48,12 +48,12 @@ int	Form::getIsSigned(void) const
 	return _isSigned;
 }
 
-const int	Form::getGradeSign(void) const
+int	Form::getGradeSign(void) const
 {
 	return _gradeSign;
 }
 
-const int	Form::getGradeExecute(void) const
+int	Form::getGradeExecute(void) const
 {
 	return _gradeExecute;
 }

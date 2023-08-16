@@ -10,6 +10,7 @@
 #define BLUE	"\e[0;34m" // Blue
 #define RESET 	"\e[0m"    // Reset
 
+class Bureaucrat;
 class Form
 {
 	private:
@@ -20,7 +21,7 @@ class Form
 		void				checkOverGrade(const int grade) const;
 	public:
 		Form();
-		Form::Form(std::string name, const int gradeSign, const int gradeExecute);
+		Form(std::string name, const int gradeSign, const int gradeExecute);
 		~Form();
 
 		Form(const Form& rhs);
@@ -28,8 +29,8 @@ class Form
 
 		const std::string&	getName(void) const;
 		int					getIsSigned(void) const;
-		const int			getGradeSign(void) const;
-		const int			getGradeExecute(void) const;
+		int					getGradeSign(void) const;
+		int					getGradeExecute(void) const;
 
 		void				beSigned(const Bureaucrat& bureaucrat);
 
