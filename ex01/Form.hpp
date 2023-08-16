@@ -1,6 +1,7 @@
 #ifndef FORM_HPP
 #define FORM_HPP
 
+#include "Bureaucrat.hpp"
 #include <iostream>
 
 #define RED		"\e[0;31m" // Red
@@ -29,6 +30,8 @@ class Form
 		int					getIsSigned(void) const;
 		const int			getGradeSign(void) const;
 		const int			getGradeExecute(void) const;
+
+		void				beSigned(const Bureaucrat& bureaucrat);
 
 		class GradeTooHighException
 		{
