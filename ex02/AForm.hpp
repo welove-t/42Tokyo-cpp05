@@ -1,5 +1,5 @@
-#ifndef FORM_HPP
-#define FORM_HPP
+#ifndef AFORM_HPP
+#define AFORM_HPP
 
 #include "Bureaucrat.hpp"
 #include <iostream>
@@ -11,7 +11,7 @@
 #define RESET 	"\e[0m"    // Reset
 
 class Bureaucrat;
-class Form
+class AForm
 {
 	private:
 		const std::string	_name;
@@ -20,19 +20,19 @@ class Form
 		const int			_gradeExecute;
 		void				checkOverGrade(const int grade) const;
 	public:
-		Form();
-		Form(std::string name, const int gradeSign, const int gradeExecute);
-		~Form();
+		AForm();
+		AForm(std::string name, const int gradeSign, const int gradeExecute);
+		virtual ~AForm();
 
-		Form(const Form& rhs);
-		Form& operator=(const Form& rhs);
+		AForm(const AForm& rhs);
+		AForm& operator=(const AForm& rhs);
 
 		const std::string&	getName(void) const;
 		int					getIsSigned(void) const;
 		int					getGradeSign(void) const;
 		int					getGradeExecute(void) const;
 
-		void				beSigned(const Bureaucrat& bureaucrat);
+		virtual void		beSigned(const Bureaucrat& bureaucrat) = 0;
 
 		class GradeTooHighException
 		{
@@ -47,6 +47,6 @@ class Form
 
 };
 
-std::ostream&	operator<<(std::ostream& os, const Form& rhs);
+std::ostream&	operator<<(std::ostream& os, const AForm& rhs);
 
 #endif

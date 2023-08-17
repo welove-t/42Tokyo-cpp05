@@ -1,7 +1,7 @@
 #ifndef BUREAUCRAT_HPP
 #define BUREAUCRAT_HPP
 
-#include "Form.hpp"
+#include "AForm.hpp"
 #include <iostream>
 
 #define RED		"\e[0;31m" // Red
@@ -10,7 +10,7 @@
 #define BLUE	"\e[0;34m" // Blue
 #define RESET 	"\e[0m"    // Reset
 
-class Form;
+class AForm;
 class Bureaucrat
 {
 	private:
@@ -30,7 +30,7 @@ class Bureaucrat
 
 		void	increaseGrade(void);
 		void	decreaseGrade(void);
-		void	signForm(Form& form) const;
+		void	signForm(AForm& form) const;
 
 		class GradeTooHighException
 		{

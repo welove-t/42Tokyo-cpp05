@@ -66,7 +66,7 @@ void	Bureaucrat::checkOverGrade(const int grade) const
 		return;
 }
 
-void	Bureaucrat::signForm(Form& form) const
+void	Bureaucrat::signForm(AForm& form) const
 {
 	try
 	{
@@ -75,7 +75,7 @@ void	Bureaucrat::signForm(Form& form) const
 			_name << " signed " << form.getName() <<
 			RESET << std::endl;
 	}
-	catch(const Form::GradeTooLowException& e)
+	catch(const AForm::GradeTooLowException& e)
 	{
 		std::cout << RED <<
 			_name << " couldn\'t sign " << form.getName() <<
