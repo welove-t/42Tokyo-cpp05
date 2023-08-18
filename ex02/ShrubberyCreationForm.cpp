@@ -62,6 +62,7 @@ void	ShrubberyCreationForm::DrawTree(std::ofstream& out, int height) const
 
 void	ShrubberyCreationForm::execute(Bureaucrat const & executor) const
 {
+	AForm::checkExecutable(executor);
 	std::ofstream outFile((_target + "_shrubbery").c_str());
 	(void)executor.getName();
 	if (!outFile)

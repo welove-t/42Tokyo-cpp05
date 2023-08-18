@@ -11,8 +11,23 @@ int main( void )
 	RobotomyRequestForm r("robot");
 	PresidentialPardonForm p("zzz");
 
-	r.execute(b);
-	p.execute(b);
+	try
+	{
+
+		std::cout << GREEN << b << RESET << std::endl;
+		std::cout << GREEN << p << RESET << std::endl;
+		r.execute(b);
+		p.execute(b);
+	}
+	catch(Bureaucrat::GradeTooLowException& e)
+	{
+		std::cout << RED << e.what() << RESET << std::endl;
+	}
+	catch(AForm::NoSignedException& e)
+	{
+		std::cout << RED << e.what() << RESET << std::endl;
+	}
+
 
 	return	0;
 }

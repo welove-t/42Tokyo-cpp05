@@ -33,7 +33,7 @@ class AForm
 		int					getGradeExecute(void) const;
 
 		void				beSigned(const Bureaucrat& bureaucrat);
-		void				checkExecutable(Bureaucrat& const bureaucrat);
+		void				checkExecutable(const Bureaucrat& bureaucrat) const;
 		virtual void		execute(Bureaucrat const & executor) const = 0;
 
 		class GradeTooHighException

@@ -77,10 +77,10 @@ void	AForm::beSigned(const Bureaucrat& bureaucrat)
 	_isSigned = true;
 }
 
-void	AForm::checkExecutable(Bureaucrat& const bureaucrat)
+void	AForm::checkExecutable(const Bureaucrat& bureaucrat) const
 {
 	if (_isSigned == false)
-		throw GradeTooLowException();
+		throw NoSignedException();
 	if (_gradeExecute < bureaucrat.getGrade())
 		throw GradeTooLowException();
 }
