@@ -14,7 +14,7 @@ RobotomyRequestForm::RobotomyRequestForm(std::string target)
 }
 
 RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm& rhs)
-: AForm(rhs.getName(), rhs.getGradeSign(), rhs.getGradeExecute()), _target(rhs._target)
+: AForm(rhs), _target(rhs._target)
 {
 	std::cout << "(RobotomyRequestForm) Copy Constructor called"  << std::endl;
 }

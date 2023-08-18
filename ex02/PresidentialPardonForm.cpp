@@ -14,7 +14,7 @@ PresidentialPardonForm::PresidentialPardonForm(std::string target)
 }
 
 PresidentialPardonForm::PresidentialPardonForm(const PresidentialPardonForm& rhs)
-: AForm(rhs.getName(), rhs.getGradeSign(), rhs.getGradeExecute()), _target(rhs._target)
+: AForm(rhs), _target(rhs._target)
 {
 	std::cout << "(PresidentialPardonForm) Copy Constructor called"  << std::endl;
 }
