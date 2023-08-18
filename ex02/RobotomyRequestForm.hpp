@@ -18,6 +18,8 @@ class RobotomyRequestForm :public AForm
 		RobotomyRequestForm(const RobotomyRequestForm& rhs);
 		RobotomyRequestForm& operator=(const RobotomyRequestForm& rhs);
 
+		void	execute(Bureaucrat const & executor) const;
+
 };
 
 #endif
