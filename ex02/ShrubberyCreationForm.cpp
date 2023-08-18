@@ -35,4 +35,40 @@ ShrubberyCreationForm& ShrubberyCreationForm::operator=(const ShrubberyCreationF
 }
 
 /* Function */
+void	ShrubberyCreationForm::DrawTree(std::ofstream& out, int height) const
+{
+	for (int i = 0; i < height; ++i) {
+		for (int j = 0; j < height - i - 1; ++j) {
+			out << ' ';
+		}
+		for (int j = 0; j < 2 * i + 1; ++j) {
+			out << '*';
+		}
+		out << std::endl;
+	}
+	int trunk_height = height / 4;
+	int trunk_width = height / 10;
 
+	for (int i = 0; i < trunk_height; ++i) {
+		for (int j = 0; j < height - trunk_width - 1; ++j) {
+			out << ' ';
+		}
+		for (int j = 0; j < 2 * trunk_width + 1; ++j) {
+			out << '*';
+		}
+		out << std::endl;
+	}
+}
+
+void	ShrubberyCreationForm::execute(Bureaucrat const & executor) const
+{
+	std::ofstream outFile((_target + "_shrubbery").c_str());
+	(void)executor.getName();
+	if (!outFile)
+	{
+		std::cerr << "Failed to open the file." << std::endl;
+		return ;
+	}
+	DrawTree(outFile, 25);
+	outFile.close();
+}
