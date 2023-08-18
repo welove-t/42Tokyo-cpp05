@@ -8,8 +8,8 @@ class RobotomyRequestForm :public AForm
 {
 	private:
 		const std::string	_target;
-		const int			_gradeSign = 72;
-		const int			_gradeExecute = 45;
+		static const int			_gradeSign = 72;
+		static const int			_gradeExecute = 45;
 	public:
 		RobotomyRequestForm();
 		RobotomyRequestForm(std::string _target);
