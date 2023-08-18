@@ -38,7 +38,7 @@ RobotomyRequestForm& RobotomyRequestForm::operator=(const RobotomyRequestForm& r
 void	RobotomyRequestForm::execute(Bureaucrat const & executor) const
 {
 	(void) executor.getGrade();
-	 std::cout << "drilling noise: ... Grind-Grind !!" << std::endl;
+	 std::cout << YELLOW << "drilling noise: ... Grind-Grind !!" << RESET <<  std::endl;
 	 std::srand(static_cast<unsigned int>(std::time(0)));
 
 	 if (std::rand() % 2 == 0)
