@@ -33,6 +33,7 @@ class AForm
 		int					getGradeExecute(void) const;
 
 		void				beSigned(const Bureaucrat& bureaucrat);
+		void				checkExecutable(Bureaucrat& const bureaucrat);
 		virtual void		execute(Bureaucrat const & executor) const = 0;
 
 		class GradeTooHighException
@@ -41,6 +42,11 @@ class AForm
 				const char* what() const throw();
 		};
 		class GradeTooLowException
+		{
+			public:
+				const char* what() const throw();
+		};
+		class NoSignedException
 		{
 			public:
 				const char* what() const throw();
