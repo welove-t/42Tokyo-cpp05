@@ -8,8 +8,8 @@ class PresidentialPardonForm :public AForm
 {
 	private:
 		const std::string	_target;
-		const int			_gradeSign = 145;
-		const int			_gradeExecute = 137;
+		const int			_gradeSign = 25;
+		const int			_gradeExecute = 5;
 	public:
 		PresidentialPardonForm();
 		PresidentialPardonForm(std::string _target);
