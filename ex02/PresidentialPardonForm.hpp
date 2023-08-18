@@ -18,6 +18,8 @@ class PresidentialPardonForm :public AForm
 		PresidentialPardonForm(const PresidentialPardonForm& rhs);
 		PresidentialPardonForm& operator=(const PresidentialPardonForm& rhs);
 
+		void	execute(Bureaucrat const & executor) const;
+
 };
 
 #endif
