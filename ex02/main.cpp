@@ -4,63 +4,6 @@
 #include "RobotomyRequestForm.hpp"
 #include "PresidentialPardonForm.hpp"
 
-
-// void	testFunc(std::string b_name, int b_grade)
-// {
-// 	Bureaucrat	bureaucrat;
-// 	const int ALLOC_COUNT = 3;
-//     AForm* form[ALLOC_COUNT] = {nullptr};
-
-// 	try
-// 	{
-// 		bureaucrat = Bureaucrat(b_name, b_grade);
-// 		form[0] = new ShrubberyCreationForm("home");
-// 		form[1] = new RobotomyRequestForm("Marvin");
-// 		form[2] = new PresidentialPardonForm("Arthur");
-// 	}
-// 	catch(Bureaucrat::GradeTooLowException& e)
-// 	{
-// 		std::cout << RED << e.what() << RESET << std::endl;
-// 		for (int i = 0; i < ALLOC_COUNT; ++i)
-// 		{
-//         	delete form[i];
-//         	form[i] = nullptr;
-//    		}
-// 		return ;
-// 	}
-// 	catch(Bureaucrat::GradeTooHighException& e)
-// 	{
-// 		std::cout << RED << e.what() << RESET << std::endl;
-// 		for (int i = 0; i < ALLOC_COUNT; ++i)
-// 		{
-//         	delete form[i];
-//         	form[i] = nullptr;
-//    		}
-// 		return ;
-// 	}
-// 	catch (const std::bad_alloc& e)
-// 	{
-//         std::cerr << RED<< "Memory allocation failed." << e.what() << RESET << std::endl;
-//         for (int i = 0; i < ALLOC_COUNT; ++i)
-// 		{
-//             delete form[i];
-//             form[i] = nullptr;
-//         }
-// 	}
-
-// 	std::cout << GREEN << bureaucrat << RESET << std::endl;
-// 	std::cout << "-----" << std::endl;
-
-// 	for (int i = 0; i < 3; i++)
-// 	{
-// 		std::cout << GREEN << *form[i] << RESET << std::endl;
-// 		bureaucrat.signForm(*form[i]);
-// 		bureaucrat.executeForm(*form[i]);
-// 		delete form[i];
-// 	}
-
-// }
-
 bool init(std::string b_name, int b_grade, Bureaucrat& bureaucrat, AForm* form[], const int ALLOC_COUNT)
 {
 	try
