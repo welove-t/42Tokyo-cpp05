@@ -4,29 +4,46 @@
 #include "RobotomyRequestForm.hpp"
 #include "PresidentialPardonForm.hpp"
 
-int main( void )
-{
-	const Bureaucrat b("b", 120);
-	ShrubberyCreationForm s("test");
-	RobotomyRequestForm r("robot");
-	PresidentialPardonForm p("zzz");
 
+void	testFunc(std::string b_name, int b_grade)
+{
+	Bureaucrat	bureaucrat(b_name, b_grade);
+	AForm* form[3] =
+	{
+		new ShrubberyCreationForm("home"),
+		new RobotomyRequestForm("Marvin"),
+		new PresidentialPardonForm("Arthur")
+	};
+	std::cout << GREEN << bureaucrat << RESET << std::endl;
+	std::cout << "-----" << std::endl;
+
+	int i = 0;
 	try
 	{
+		while (i < 3)
+		{
+			std::cout << GREEN << *form[i] << RESET << std::endl;
+			bureaucrat.signForm(*form[i]);
+			form[i]->execute(bureaucrat);
+			i++;
+		}
+	}
+	catch(const AForm::NoSignedException& e)
+	{
+		std::cout << RED <<
+			bureaucrat.getName() << " couldn\'t sign " << form[i]->getName() <<
+			" because " << e.what() << "." <<
+			RESET << std::endl;
+	}
 
-		std::cout << GREEN << b << RESET << std::endl;
-		std::cout << GREEN << p << RESET << std::endl;
-		r.execute(b);
-		p.execute(b);
-	}
-	catch(Bureaucrat::GradeTooLowException& e)
-	{
-		std::cout << RED << e.what() << RESET << std::endl;
-	}
-	catch(AForm::NoSignedException& e)
-	{
-		std::cout << RED << e.what() << RESET << std::endl;
-	}
+}
+
+int main( void )
+{
+	std::cout << BLUE <<
+	"              [ Init Test ]"	 <<
+	RESET << std::endl;
+	testFunc("bureaucrat1", 1);
 
 
 	return	0;
