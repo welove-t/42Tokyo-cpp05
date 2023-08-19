@@ -5,7 +5,15 @@
 #include "PresidentialPardonForm.hpp"
 #include "Intern.hpp"
 
-
+void	formExecute(Bureaucrat& bureaucrat, AForm* form)
+{
+	std::cout << GREEN << bureaucrat << RESET << std::endl;
+	std::cout << "-----" << std::endl;
+	std::cout << GREEN << *form << RESET << std::endl;
+	bureaucrat.signForm(*form);
+	bureaucrat.executeForm(*form);
+	delete form;
+}
 
 bool initBureaucrat(std::string b_name, int b_grade, Bureaucrat& bureaucrat)
 {
@@ -24,16 +32,6 @@ bool initBureaucrat(std::string b_name, int b_grade, Bureaucrat& bureaucrat)
 		return false;
 	}
 	return true;
-}
-
-void	formExecute(Bureaucrat& bureaucrat, AForm* form)
-{
-	std::cout << GREEN << bureaucrat << RESET << std::endl;
-	std::cout << "-----" << std::endl;
-	std::cout << GREEN << *form << RESET << std::endl;
-	bureaucrat.signForm(*form);
-	bureaucrat.executeForm(*form);
-	delete form;
 }
 
 void	testFunc(std::string b_name, int b_grade, std::string f_name, std::string f_target)

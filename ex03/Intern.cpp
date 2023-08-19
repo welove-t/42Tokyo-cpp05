@@ -56,7 +56,6 @@ AForm*	Intern::makeForm(const std::string& formName, const std::string& target)
 				break;
 			default:
 				throw badFormException();
-
 		}
 	}
 	catch(const Intern::badFormException& e)
@@ -70,7 +69,7 @@ AForm*	Intern::makeForm(const std::string& formName, const std::string& target)
 		return NULL;
 	}
 
-	std::cout << GREEN << "Intern creates " << form << std::endl;
+	std::cout << GREEN << "Intern creates " << formName << std::endl;
 	return form;
 }
 
