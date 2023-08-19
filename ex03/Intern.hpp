@@ -18,8 +18,14 @@ class Intern
 		Intern(const Intern& rhs);
 		Intern& operator=(const Intern& rhs);
 
-		int		getIndexForm(std::string name);
+		int		getIndexForm(const std::string& name);
 		AForm*	makeForm(const std::string& formName, const std::string& target);
+
+		class badFormException
+		{
+			public:
+				const char* what() const throw();
+		};
 };
 
 

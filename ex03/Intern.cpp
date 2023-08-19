@@ -41,21 +41,45 @@ AForm*	Intern::makeForm(const std::string& formName, const std::string& target)
 {
 	AForm *form;
 
-	switch (1)
+	try
 	{
-		case 0:
-			form = new ShrubberyCreationForm(target);
-			break;
-		case 1:
-			form = new RobotomyRequestForm(target);
-			break;
-		case 2:
-			form = new PresidentialPardonForm(target);
-			break;
-		default:
-			std::cout << RED << formName << " is not an eligible form" << std::endl;
-			return NULL;
+		switch (1)
+		{
+			case 0:
+				form = new ShrubberyCreationForm(target);
+				break;
+			case 1:
+				form = new RobotomyRequestForm(target);
+				break;
+			case 2:
+				form = new PresidentialPardonForm(target);
+				break;
+			default:
+				throw badFormException();
+
+		}
 	}
+	catch(const Intern::badFormException& e)
+	{
+		std::cout << RED << formName << " is not an eligible form" << std::endl;
+		return NULL;
+	}
+	catch (const std::bad_alloc& e)
+	{
+		std::cerr << RED << "Memory allocation failed: " << e.what() << RESET << std::endl;
+		return NULL;
+	}
+
 	std::cout << GREEN << "Intern creates " << form << std::endl;
 	return form;
+}
+
+int		Intern::getIndexForm(const std::string& name)
+{
+	for (int i = 0; i < formSize; i++)
+	{
+		if (name == formName[i])
+			return i;
+	}
+	return -1;
 }
