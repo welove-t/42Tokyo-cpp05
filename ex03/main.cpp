@@ -7,7 +7,7 @@
 
 
 
-void initBureaucrat(std::string b_name, int b_grade, Bureaucrat& bureaucrat)
+bool initBureaucrat(std::string b_name, int b_grade, Bureaucrat& bureaucrat)
 {
 	try
 	{
@@ -16,11 +16,14 @@ void initBureaucrat(std::string b_name, int b_grade, Bureaucrat& bureaucrat)
 	catch(Bureaucrat::GradeTooLowException& e)
 	{
 		std::cout << RED << e.what() << RESET << std::endl;
+		return false;
 	}
 	catch(Bureaucrat::GradeTooHighException& e)
 	{
 		std::cout << RED << e.what() << RESET << std::endl;
+		return false;
 	}
+	return true;
 }
 
 void	formExecute(Bureaucrat& bureaucrat, AForm* form)
@@ -39,14 +42,20 @@ void	testFunc(std::string b_name, int b_grade, std::string f_name, std::string f
 	Bureaucrat	bureaucrat;
 	AForm* form;
 
-	initBureaucrat(b_name, b_grade, bureaucrat);
-	form = intern.makeForm(f_name, f_target);
+	if (!initBureaucrat(b_name, b_grade, bureaucrat))
+		return ;
+	if ((form = intern.makeForm(f_name, f_target)) == NULL)
+		return ;
 	formExecute(bureaucrat, form);
 }
 
 int main( void )
 {
-
+	testFunc("bureaucrat1", 151, "shrubbery creation", "piyo");
+	testFunc("bureaucrat2", 137, "shrubbery creation", "home");
+	testFunc("bureaucrat3", 45, "robotomy request", "nop");
+	testFunc("bureaucrat4", 5, "presidential pardon", "terabu");
+	testFunc("bureaucrat4", 5, "bad", "piyo");
 	return	0;
 }
 

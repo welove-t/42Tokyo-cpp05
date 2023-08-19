@@ -43,7 +43,7 @@ AForm*	Intern::makeForm(const std::string& formName, const std::string& target)
 
 	try
 	{
-		switch (1)
+		switch (getIndexForm(formName))
 		{
 			case 0:
 				form = new ShrubberyCreationForm(target);
@@ -61,7 +61,7 @@ AForm*	Intern::makeForm(const std::string& formName, const std::string& target)
 	}
 	catch(const Intern::badFormException& e)
 	{
-		std::cout << RED << formName << " is not an eligible form" << std::endl;
+		std::cout << RED << formName << " is not an eligible form" << RESET << std::endl;
 		return NULL;
 	}
 	catch (const std::bad_alloc& e)
