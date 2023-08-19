@@ -31,6 +31,7 @@ class Bureaucrat
 		void	increaseGrade(void);
 		void	decreaseGrade(void);
 		void	signForm(AForm& form) const;
+		void	executeForm(AForm const & form);
 
 		class GradeTooHighException
 		{

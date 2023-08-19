@@ -81,7 +81,7 @@ void	AForm::checkExecutable(const Bureaucrat& bureaucrat) const
 {
 	if (_isSigned == false)
 		throw NoSignedException();
-	if (_gradeExecute < bureaucrat.getGrade())
+	if (bureaucrat.getGrade() > _gradeExecute)
 		throw GradeTooLowException();
 }
 

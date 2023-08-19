@@ -39,11 +39,11 @@ void	RobotomyRequestForm::execute(Bureaucrat const & executor) const
 {
 	AForm::checkExecutable(executor);
 	(void) executor.getGrade();
-	 std::cout << YELLOW << "drilling noise: ... Grind-Grind !!" << RESET <<  std::endl;
+	 std::cout << GREEN << "drilling noise: ... Grind-Grind !!" << RESET <<  std::endl;
 	 std::srand(static_cast<unsigned int>(std::time(0)));
 
 	 if (std::rand() % 2 == 0)
 		std::cout << GREEN << "Robotomy: Success" << RESET << std::endl;
 	 else
-		std::cout << RED << "Robotomy: Failed" << RESET << std::endl;
+		std::cout << GREEN << "Robotomy: Failed" << RESET << std::endl;
 }
