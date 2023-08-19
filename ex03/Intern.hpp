@@ -2,12 +2,15 @@
 #define INTERN_HPP
 
 #include "AForm.hpp"
+#include "ShrubberyCreationForm.hpp"
+#include "RobotomyRequestForm.hpp"
+#include "PresidentialPardonForm.hpp"
 
 class Intern
 {
 	private:
-		static const int	formSize = 3;
-		std::string			formName[formSize];
+		static const int			formSize = 3;
+		static const std::string 	formName[formSize];
 	public:
 		Intern();
 		~Intern();
@@ -15,7 +18,8 @@ class Intern
 		Intern(const Intern& rhs);
 		Intern& operator=(const Intern& rhs);
 
-		AForm*	makeForm(std::string form, std::string target);
+		int		getIndexForm(std::string name);
+		AForm*	makeForm(const std::string& formName, const std::string& target);
 };
 
 
