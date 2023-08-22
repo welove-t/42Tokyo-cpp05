@@ -7,7 +7,7 @@ int main( void )
 	std::cout << BLUE <<
 	"------------------------------------------" << std::endl <<
 	"               Initial Test "	 			<< std::endl <<
-	"------------------------------------------" << std::endl <<
+	"------------------------------------------" <<
 	RESET << std::endl;
 	for (int i = 149; i < 153; i++)
 	{
@@ -28,11 +28,29 @@ int main( void )
 			continue;
 		}
 	}
-
+	for (int i = 2; i > -2; i--)
+	{
+		try
+		{
+			std::cout << "i = " << i << std::endl;
+			bureaucrat1 = Bureaucrat("bureaucrat" + std::to_string(i), i);
+			std::cout << GREEN << bureaucrat1 << RESET << std::endl;
+		}
+		catch(Bureaucrat::GradeTooLowException& e)
+		{
+			std::cout << RED << e.what() << "  " << RESET << std::endl;
+			continue;
+		}
+		catch(Bureaucrat::GradeTooHighException& e)
+		{
+			std::cout << RED << e.what() << RESET << std::endl;
+			continue;
+		}
+	}
 	std::cout << BLUE <<
 	"------------------------------------------" << std::endl <<
 	"             IncreaseGrade Test "	 			<< std::endl <<
-	"------------------------------------------" << std::endl <<
+	"------------------------------------------" <<
 	RESET << std::endl;
 
 	int i = 3;
@@ -59,7 +77,7 @@ int main( void )
 	std::cout << BLUE <<
 	"------------------------------------------" << std::endl <<
 	"             DecreaseGrade Test "	 			<< std::endl <<
-	"------------------------------------------" << std::endl <<
+	"------------------------------------------" <<
 	RESET << std::endl;
 
 	i = 148;

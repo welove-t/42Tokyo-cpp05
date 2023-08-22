@@ -13,7 +13,7 @@ void head_print(std::string b_name, int b_grade, std::string f_name, int f_grade
 	"    - name:\t\t" << f_name	 				<< std::endl <<
 	"    - gradeSign:\t" << f_grade_sign	 	<< std::endl <<
 	"    - gradeEXE:\t\t" << f_grade_exe	 		<< std::endl <<
-	"------------------------------------------" << std::endl <<
+	"------------------------------------------" <<
 	RESET << std::endl;
 }
 

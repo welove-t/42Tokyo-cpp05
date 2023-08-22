@@ -82,7 +82,7 @@ int main( void )
 	"Shrubbery\t:" << " x\t"<< " x" << std::endl <<
 	"Robotomy\t:" << " x\t"<< " x" << std::endl <<
 	"Presidential\t:" << " x\t"<< " x" << std::endl <<
-	"-------------------------------------" << std::endl <<
+	"-------------------------------------" <<
 	RESET << std::endl;
 	testFunc("bureaucrat1", 146);
 
@@ -93,7 +93,7 @@ int main( void )
 	"Shrubbery\t:" << " ○\t"<< " x" << std::endl <<
 	"Robotomy\t:" << " x\t"<< " x" << std::endl <<
 	"Presidential\t:" << " x\t"<< " x" << std::endl <<
-	"-------------------------------------" << std::endl <<
+	"-------------------------------------" <<
 	RESET << std::endl;
 	testFunc("bureaucrat2", 138);
 
@@ -104,7 +104,7 @@ int main( void )
 	"Shrubbery\t:" << " ○\t"<< " ○" << std::endl <<
 	"Robotomy\t:" << " x\t"<< " x" << std::endl <<
 	"Presidential\t:" << " x\t"<< " x" << std::endl <<
-	"-------------------------------------" << std::endl <<
+	"-------------------------------------" <<
 	RESET << std::endl;
 	testFunc("bureaucrat3", 73);
 
@@ -115,7 +115,7 @@ int main( void )
 	"Shrubbery\t:" << " ○\t"<< " ○" << std::endl <<
 	"Robotomy\t:" << " ○\t"<< " x" << std::endl <<
 	"Presidential\t:" << " x\t"<< " x" << std::endl <<
-	"-------------------------------------" << std::endl <<
+	"-------------------------------------" <<
 	RESET << std::endl;
 	testFunc("bureaucrat4", 46);
 
@@ -126,7 +126,7 @@ int main( void )
 	"Shrubbery\t:" << " ○\t"<< " ○" << std::endl <<
 	"Robotomy\t:" << " ○\t"<< " ○" << std::endl <<
 	"Presidential\t:" << " x\t"<< " x" << std::endl <<
-	"-------------------------------------" << std::endl <<
+	"-------------------------------------" <<
 	RESET << std::endl;
 	testFunc("bureaucrat5", 26);
 
@@ -137,7 +137,7 @@ int main( void )
 	"Shrubbery\t:" << " ○\t"<< " ○" << std::endl <<
 	"Robotomy\t:" << " ○\t"<< " ○" << std::endl <<
 	"Presidential\t:" << " ○\t"<< " x" << std::endl <<
-	"-------------------------------------" << std::endl <<
+	"-------------------------------------" <<
 	RESET << std::endl;
 	testFunc("bureaucrat6", 6);
 
@@ -148,7 +148,7 @@ int main( void )
 	"Shrubbery\t:" << " ○\t"<< " ○" << std::endl <<
 	"Robotomy\t:" << " ○\t"<< " ○" << std::endl <<
 	"Presidential\t:" << " ○\t"<< " ○" << std::endl <<
-	"-------------------------------------" << std::endl <<
+	"-------------------------------------" <<
 	RESET << std::endl;
 	testFunc("bureaucrat7", 5);
 
