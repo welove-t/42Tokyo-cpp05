@@ -32,12 +32,12 @@ class Bureaucrat
 		void	decreaseGrade(void);
 		void	signForm(Form& form) const;
 
-		class GradeTooHighException
+		class GradeTooHighException : public std::exception
 		{
 			public:
 				const char* what() const throw();
 		};
-		class GradeTooLowException
+		class GradeTooLowException : public std::exception
 		{
 			public:
 				const char* what() const throw();

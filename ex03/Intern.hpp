@@ -21,7 +21,7 @@ class Intern
 		int		getIndexForm(const std::string& name);
 		AForm*	makeForm(const std::string& formName, const std::string& target);
 
-		class badFormException
+		class badFormException : public std::exception
 		{
 			public:
 				const char* what() const throw();

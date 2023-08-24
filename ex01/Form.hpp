@@ -34,12 +34,12 @@ class Form
 
 		void				beSigned(const Bureaucrat& bureaucrat);
 
-		class GradeTooHighException
+		class GradeTooHighException : public std::exception
 		{
 			public:
 				const char* what() const throw();
 		};
-		class GradeTooLowException
+		class GradeTooLowException : public std::exception
 		{
 			public:
 				const char* what() const throw();
